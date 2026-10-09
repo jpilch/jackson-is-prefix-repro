@@ -3,10 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.beans.BeanInfo;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-
 class ComparisonTest {
 
     @Test
@@ -25,13 +21,6 @@ class ComparisonTest {
 
         System.out.println("Jackson 2 = " + json2);
         System.out.println("Jackson 3 = " + json3);
-
-        BeanInfo beanInfo =
-            Introspector.getBeanInfo(TestEvent.class);
-
-        for (PropertyDescriptor pd : beanInfo.getPropertyDescriptors()) {
-            System.out.println(pd.getName());
-        }
 
         Assertions.assertEquals(json2, json3);
     }
